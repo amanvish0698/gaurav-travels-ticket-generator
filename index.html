@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav Tour and Travels Ticket Generator</title>
+  <link rel="icon" type="image/png" href="./logo.png" />
+
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/main.css" />
+</head>
+<body>
+  <!-- Header & Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-wrapper">
+        <img id="header-brand-logo" src="./logo.png" alt="Gaurav Tour and Travels" class="brand-logo-img" />
+        <div class="brand-text-block">
+          <h1 id="header-brand-name">Gaurav Tour and Travels</h1>
+          <div class="brand-sub">Ticket Generator & Branding Suite</div>
+        </div>
+      </div>
+
+      <nav class="nav-tabs" aria-label="Navigation Tabs">
+        <div class="nav-group nav-group-flow">
+          <button type="button" class="tab-btn active" data-tab="upload" id="nav-btn-upload">
+            <span>📤 1. Upload Ticket</span>
+          </button>
+          <button type="button" class="tab-btn" data-tab="review" id="nav-btn-review">
+            <span>📝 2. Review & Price</span>
+            <span id="review-badge" class="tab-badge" style="display: none;">Draft</span>
+          </button>
+        </div>
+
+        <div class="nav-separator" role="separator" aria-orientation="vertical"></div>
+
+        <div class="nav-group nav-group-settings">
+          <button type="button" class="tab-btn btn-settings-tab" data-tab="settings" id="nav-btn-settings">
+            <span>⚙️ Agency Settings</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    <!-- Tab 1: Upload -->
+    <section id="upload-pane" class="tab-pane active" aria-labelledby="Upload Ticket PDF"></section>
+
+    <!-- Tab 2: Review & Price -->
+    <section id="review-pane" class="tab-pane" aria-labelledby="Review Flight Data"></section>
+
+    <!-- Tab 3: Agency Settings -->
+    <section id="settings-pane" class="tab-pane" aria-labelledby="Agency Branding Settings"></section>
+  </main>
+
+  <!-- Live PDF Preview Modal -->
+  <div id="preview-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-preview-title">
+    <div class="modal-dialog" style="max-width: 720px; width: 95%;">
+      <div class="modal-header">
+        <h3 id="modal-preview-title" style="font-size: 1.15rem; font-weight: 700; color: var(--color-text);">
+          Live Ticket PDF Preview
+        </h3>
+        <button type="button" id="modal-close-cross" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--color-text-muted); line-height: 1; padding: 0.25rem 0.5rem;">
+          &times;
+        </button>
+      </div>
+      <div id="modal-preview-body" class="modal-body" style="padding: 0; max-height: 82vh; overflow-y: auto; -webkit-overflow-scrolling: touch;">
+        <!-- Canvas pages rendered dynamically -->
+      </div>
+      <div class="modal-footer" style="padding: 0.75rem 1.25rem;">
+        <button type="button" id="modal-close-btn" class="btn btn-secondary">Close Preview</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div style="max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+      <div>
+        <strong>Gaurav Tour and Travels</strong> &copy; 2026. All rights reserved.
+      </div>
+      <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-success);"></span>
+        <span>100% In-Browser &bull; Zero Server Transmission &bull; Client Privacy Guaranteed</span>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>

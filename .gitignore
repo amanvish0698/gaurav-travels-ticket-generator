@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Production build output (managed by GitHub Actions workflow)
+dist/
+dist-ssr/
+
+# Editor & OS files
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
